@@ -30,8 +30,8 @@
             <div class="mainContainer link-controller" aria-role="main">
                <div id="HBSHBXOneCol">
                   <div class="inherit-bg">
-                     <div class="mobile-visible tablet-visible">
-                        <div class="hbx-logo-wrap" style="margin-top:  0; margin-bottom: 0; padding-top:  .8rem;"><img src="images/hbx.png" class="responsive"></div>
+                     <div class="mobile-visible tablet-visible new-mobile-logo">
+                        <div class="hbx-logo-wrap-mobile"><img src="images/hbx.png" class="responsive"></div>
                      </div>
                      <img src="images/page-header-main-img.jpg" class="mobile-visible tablet-visible">
                      <div class="white container tablet-container mobile-container wide-container page-header">
@@ -41,7 +41,7 @@
                                  <div class="hbx-logo-wrap"><img src="images/hbx.png" class="responsive"></div>
                               </div>
                            </div>
-                           <div class="span6 tablet-span12">
+                           <div class="span6 tablet-span12 right-pad-hero">
 <div class="pad-desk-mini">
   <h1>
      <div class="beta"><span>Master Business Essentials with Harvard Business School’s Online CORe Program.</span></div>
@@ -65,13 +65,15 @@
                            </div>
                         <div class="tabs-wrap">
                            <div class="tab">
-                              <button class="tablinks" onclick="openCity(event, 'overview')" id="defaultOpen">Overview</button>
-                              <button class="tablinks" onclick="openCity(event, 'business-analytics')">Business Analytics</button>
-                              <button class="tablinks" onclick="openCity(event, 'economics-for-managers')">Economics for Managers</button>
-                              <button class="tablinks" onclick="openCity(event, 'financial-accounting')">Financial Accounting</button>
+                              <button class="tablinks desktop-button active" data-buttonID="overview">Overview</button>
+                              <button class="tablinks desktop-button" data-buttonID="business-analytics">Business Analytics</button>
+                              <button class="tablinks desktop-button" data-buttonID="economics-for-managers">Economics for Managers</button>
+                              <button class="tablinks desktop-button" data-buttonID="financial-accounting">Financial Accounting</button>
                            </div>
-                           <div id="overview" class="tabcontent">
-                                <div class="container tablet-container mobile-container">
+
+                           <div id="overview" class="tabcontent desktop-tab-open">
+                            <button class="tablinks mobile-tab-link">Overview</button>
+                                <div class="container tablet-container mobile-container exposed">
                                    <div class="row mobile-row tablet-row equal-heights-row">
                                      <div class="span5 tablet-span12">
                                         <section class="h2-beta h2-fancy h3-gamma h4-eta body-margins">
@@ -98,6 +100,7 @@
                                 </div>
                            </div>
                            <div id="business-analytics" class="tabcontent">
+                              <button class="tablinks mobile-tab-link">Business Analytics</button>
                                  <div class="container tablet-container mobile-container">
                                     <div class="row mobile-row tablet-row equal-heights-row">
                                       <div class="span5 tablet-span12">
@@ -134,6 +137,7 @@
                                  </div>
                            </div>
                            <div id="economics-for-managers" class="tabcontent">
+                              <button class="tablinks mobile-tab-link">Economics for Managers</button>
                                  <div class="container tablet-container mobile-container">
                                     <div class="row mobile-row tablet-row equal-heights-row">
                                       <div class="span5 tablet-span12">
@@ -170,6 +174,7 @@
                                  </div>
                            </div>
                            <div id="financial-accounting" class="tabcontent">
+                              <button class="tablinks mobile-tab-link">Financial Accounting</button>
                                  <div class="container tablet-container mobile-container">
                                     <div class="row mobile-row tablet-row equal-heights-row">
                                        <div class="span5 tablet-span12">
@@ -390,7 +395,7 @@
                                              </div>
                                              <a style="margin-top: 1rem; margin-bottom: 1.5rem" href="https://login.myhbx.org/login?service=https%3A%2F%2Fadmin.myhbx.org%2Fsso" aria-label="Learn more on November 2018" class="btn carmine-bg" >Apply Now</a>
                                              <ul class="unbulleted">
-                                                <li style="color: #8a8f99">Deadline: Nove. 19</li>
+                                                <li style="color: #8a8f99">Deadline: Nov. 19</li>
                                              </ul>
                                           </div>
                                        </div>
@@ -510,7 +515,7 @@
                                                    <div class="carousel-nav xcarousel-nav-minimal carousel-nav-centered"></div>
                                                 </div>
                                                 <div class="shim28"></div>
-                                                <div class="center"><a href="https://hbx.hbs.edu/why-hbx/student-stories/?program=HBX%20CORe" target="blank" class="basic-lnk">See More Stories</a></div>
+                                                <!-- <div class="center"><a href="https://hbx.hbs.edu/why-hbx/student-stories/?program=HBX%20CORe" target="blank" class="basic-lnk">See More Stories</a></div> -->
                                              </div>
                                           </div>
                                        </div>
@@ -550,7 +555,7 @@ Learn more about fees, scholarships, and financing options. Students from <a hre
                                                    <img src="https://d2ek9hfteqtmbq.cloudfront.net/PublishingImages/icons/speechbubble.png?v=1&amp;d=1" alt="" class="carmine-bg" style="margin-bottom:10px;" height="50">
                                                    <h3 class="eta equal-heights" style="margin-bottom:1em"><a class="black" href="https://hbx.hbs.edu/enroll/faqs#faq-442" target="_blank">Frequently Asked Questions</a><br><span class="kappa"></span></h3>
                                                    <div class="equal-heights2">
-                                                      <p style="color: #a41c37">Do I have to log in at a set time?<br>
+                                                      <p>Do I have to log in at a set time?<br>
                                                          How does the grading process work?
                                                       </p>
                                                       <p>You probably have a few questions, and we’ve got answers.</p>
@@ -623,45 +628,64 @@ Learn more about fees, scholarships, and financing options. Students from <a hre
       <script type="text/javascript" src="https://d2ek9hfteqtmbq.cloudfront.net/Style%20Library/hbs/js/hbx.js?v=1.7"></script>
       <script type="text/javascript">
 
-  // Custom JS Begin Here
-          // Some teeny-tiny snippet of Javascript to make tabs work :)
+      // Custom JS Begin Here
+      // Some teeny-tiny snippet of Javascript to make tabs work :)
 
-          function openCity(evt, cityName) {
-              var i, tabcontent, tablinks;
-              tabcontent = document.getElementsByClassName("tabcontent");
-              for (i = 0; i < tabcontent.length; i++) {
-                  tabcontent[i].style.visibility = "hidden";
-                  tabcontent[i].style.height = 0;
-                  tabcontent[i].style.width = 0;
-                  tabcontent[i].style.position = "absolute";
-                  tabcontent[i].style.top = "-9999px";
-                    tabcontent[i].style.left = "-9999px";
-              }
-              tablinks = document.getElementsByClassName("tablinks");
-              for (i = 0; i < tablinks.length; i++) {
-                  tablinks[i].className = tablinks[i].className.replace(" active", "");
-              }
-evt.currentTarget.className += " active";
-              document.getElementById(cityName).style.visibility = "visible";
-              document.getElementById(cityName).style.height = "auto";
-              document.getElementById(cityName).style.width = "86%";
-              document.getElementById(cityName).style.position = "";
-              document.getElementById(cityName).style.top = "";
-              document.getElementById(cityName).style.left = "";
-              $('.tablinks').click(function() {
-    $('html, body').animate({
-        scrollTop: $(document.getElementById(cityName)).offset().top
-    }, 0);
-});
+(function (window, document, undefined) {
+  'use strict';
+  
+  // Initialize the media query
+  var mediaQuery = window.matchMedia('(max-width: 1279px)');
+  
+  // Add a listen event
+  mediaQuery.addListener(goTabs);
+  
+  // Function to do something with the media query
+  function goTabs(mediaQuery) {    
+    if (mediaQuery.matches) {
+      //document.body.style.backgroundColor = 'CornflowerBlue';
+          $('.tablinks.mobile-tab-link').on('click', function(){
+            var theButton = $(this);
+            if( $(this).hasClass('active-mobile-tab') ){
+              $(this).removeClass('active-mobile-tab');
+              $('.tabcontent .container.tablet-container.mobile-container.exposed').removeClass('exposed');
+            }else{
+              $('.tabcontent .container.tablet-container.mobile-container.exposed').removeClass('exposed');
+              $('.tablinks.mobile-tab-link').removeClass('active-mobile-tab');
+            
+              $(this).addClass('active-mobile-tab');
+              $(this).next().addClass('exposed');
+              $('html, body').animate({
+                scrollTop: $('.tabs-wrap').offset().top
+              }, 0);              
+            }
+          });      
+    } else {
+      //document.body.style.backgroundColor = 'FireBrick';
+      $('.tablinks.desktop-button').on('click', function(){
+        var theElement = $(this).attr('data-buttonID');
+        //var FinalElement = '#' + theElement;
+        //console.log(FinalElement);
+        
+        $('.tablinks.desktop-button').removeClass('active');
+        $(this).addClass('active');
 
-          }
-
-          // Get the element with id="defaultOpen" and click on it
-          document.getElementById("defaultOpen").click();
+        $('.tabcontent.desktop-tab-open').removeClass('desktop-tab-open');
+        $('body').find('#' + theElement).addClass('desktop-tab-open');
 
 
+      });
+    }
+  }
+  
+  // On load
+  goTabs(mediaQuery);
+  
+})(window, document);
 
-               // Custom JS Ends
+
+
+       // Custom JS Ends
 
                   require.config({
                   paths: {
